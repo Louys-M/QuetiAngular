@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InsecteComponent } from '../Queti/insecte/insecte.component';
 import { Insecte } from '../models/insecte';
+import { InsectesService } from '../Services/insectes.service';
 
 @Component({
   selector: 'app-insecte-list',
@@ -10,33 +11,15 @@ import { Insecte } from '../models/insecte';
   styleUrl: './insecte-list.component.css'
 })
 export class InsecteListComponent {
-  //déclaration de la propriété
-  lesInsectes!: Insecte[];
+
+  insectes!: Insecte[]
+
+  constructor(private insectesServices : InsectesService){
+    this.insectes = this.insectesServices.getInsectesList();
+  }
 
   ngOnInit(): void{
-    this.lesInsectes = [
-    new Insecte(
-      1,
-      "Api Mellifeira",
-      "Abeille Commune",
-      "../assets/0428.jpg",
-      "bébou"
-    ),
-    new Insecte(
-      2,
-      "Je coco pas de nom scientifique",
-      "Coccinelle",
-      "../assets/0428.jpg",
-      "bébou 2"
-    ),
-    new Insecte(
-      3,
-      "GRR",
-      "AAA",
-      "../assets/0428.jpg",
-      ">;("
-    )
-]
+
 }
 
 }
