@@ -8,7 +8,7 @@ import { Insecte } from '../../models/insecte';
   templateUrl: './insecte.component.html',
   styleUrl: './insecte.component.css'
 })
-export class InsecteComponent implements OnInit {
+export class InsecteComponent {
 
   @Input() insecte!: Insecte;
 
@@ -17,13 +17,5 @@ export class InsecteComponent implements OnInit {
   nom_fr!: string;
   photo!: string;
   description!: string;
-
-  ngOnInit(): void {
-    this.id = 1;
-    this.nom_sc = "Api Mellifeira";
-    this.nom_fr= "Abeille Commune";
-    this.photo = "../../assets/0428.jpg";
-    this.description = "string";
-  }
 
 }
