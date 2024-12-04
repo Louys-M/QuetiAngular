@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Insecte } from '../../models/insecte';
 
 @Component({
   selector: 'app-insecte',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './insecte.component.css'
 })
 export class InsecteComponent implements OnInit {
+
+  @Input() insecte!: Insecte;
+
   id! : number;
   nom_sc! : string;
   nom_fr!: string;
