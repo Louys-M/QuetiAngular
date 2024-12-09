@@ -7,13 +7,35 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   constructor(private router: Router) { }
-  url = environment.api_url + '/login';
+  url : string = "" ;
   token: string | null = null;
   is_connected = false;
   error: string = '';
   //utilisation d’un BehaviorSubject pour créer une reaction lors du changement de valeur sur d’autres components
   private loggedIn = new BehaviorSubject<boolean>(this.isAuthenticated());
+
+  async register(name: string, email: string, password: string) {
+    this.url = environment.api_url + 'register';
+    const response = await fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, email, password })
+    });
+    const data = await response.json();
+    console.log(data.message);
+
+    this.error = data.message;
+    if (response.ok) {
+      console.log('register réussi');
+      //rediection vers la page d'accueil quand connecté
+      this.router.navigate(['/login']);
+  }
+}
+
   async login(email: string, password: string) {
+    this.url = environment.api_url + 'login';
     const response = await fetch(this.url, {
       method: 'POST',
       headers: {
@@ -56,7 +78,7 @@ export class AuthService {
     //on met à jour la valeur du BehaviorSubject
     this.loggedIn.next(false);
     //Redirection vers la page de login
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
   isAuthenticated(): boolean {
     return !!localStorage.getItem('authToken');
