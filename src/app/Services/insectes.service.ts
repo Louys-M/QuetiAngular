@@ -31,8 +31,7 @@ export class InsectesService {
       ">;("
     )
   ]
-
-
+  
   constructor(private httpClient : HttpClient) { }
 
   getInsectesByAPI(): Observable<Insecte[]> {

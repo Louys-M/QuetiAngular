@@ -1,12 +1,12 @@
 export class Insecte {
-    //décalration des propriétés du model Video
+    //décalration des propriétés du model insecte
     id: number;
     nom_sc: string;
     nom_fr: string;
     photo: string;
     description: string;
 
-    //permet d'initialiser une instance de Video
+    //permet d'initialiser une instance de Insecte
     constructor(
     id: number,
     nom_sc: string,
