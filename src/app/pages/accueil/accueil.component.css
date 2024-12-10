@@ -1,7 +1,35 @@
 .question{
+    margin-top: 50px;
+    text-align: center;
+}
 
+.question img{
+    width: 60%
+}
+
+
+.buttons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .accueil_button{
-    
+
+}
+
+h1{
+    font-size: 40px;
+    color: #B6AD74;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    color: #B6AD74;
+    font-size: 30px;
+}
+
+.img_accueil{
+    width: 90px;
 }

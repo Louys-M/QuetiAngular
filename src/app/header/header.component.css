@@ -2,7 +2,21 @@ header{
     background-color: #DFDFBD;
 }
 
-img{
+
+.menu_header{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 120px;
+    height: auto;
+}
+
+.para{
     width: 50px;
     height: auto;
 }
