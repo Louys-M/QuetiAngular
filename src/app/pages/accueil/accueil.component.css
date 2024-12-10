@@ -1,5 +1,5 @@
 .question{
-    margin-top: 50px;
+    margin-top: 20vh;
     text-align: center;
 }
 
@@ -9,13 +9,13 @@
 
 
 .buttons{
-    margin-top: 20px;
+    margin-top: 18vh;
     display: flex;
     justify-content: space-around;
 }
 
 .accueil_button{
-
+    text-align: center;
 }
 
 h1{
