@@ -1,1 +1,12 @@
 <p>settings works!</p>
+
+@if (authService.isAuthenticated()) {
+
+    <h1>User Profile</h1>
+    <p>Name: {{ user.data.name }}</p>
+    <p>Email: {{ user.data.email }}</p>
+
+    <button (click)="logout()">Déconnexion</button>
+    } @else {
+    <button (click)="router.navigate(['/login'])">Connexion</button>
+    }

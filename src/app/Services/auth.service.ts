@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
   url : string = "" ;
   token: string | null = null;
   is_connected = false;
@@ -66,9 +68,19 @@ export class AuthService {
       console.log(this.error);
     }
   }
+
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
+
+  getInfo() {
+    const token = localStorage.getItem('authToken');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    this.url = environment.api_url + 'me'
+
+    return this.http.get(this.url, { headers });
+  }
+
   logout() {
     this.token = null;
     this.is_connected = false;
@@ -80,6 +92,7 @@ export class AuthService {
     //Redirection vers la page de login
     this.router.navigate(['/login']);
   }
+
   isAuthenticated(): boolean {
     return !!localStorage.getItem('authToken');
   }
