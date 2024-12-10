@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { OrdreComponent } from '../../Queti/ordre/ordre.component';
 import { Ordre } from '../../models/ordre';
 import { OrdresService } from '../../Services/ordres.service';
+import { RouterLinkActive } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu-catalogue',
   standalone: true,
-  imports: [OrdreComponent],
+  imports:[RouterLink, RouterLinkActive,OrdreComponent],
   templateUrl: './menu-catalogue.component.html',
   styleUrl: './menu-catalogue.component.css'
 })
