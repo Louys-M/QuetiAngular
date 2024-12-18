@@ -1,10 +1,12 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Insecte } from '../../models/insecte';
+import { RouterLinkActive } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-insecte',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './insecte.component.html',
   styleUrl: './insecte.component.css'
 })

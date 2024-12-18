@@ -12,7 +12,6 @@ import { Route, Router, RouterLink } from '@angular/router';
 })
 export class OrdreComponent {
 
-
   @Input() ordre!: Ordre;
     id! : number;
     nom_ordre! : string;

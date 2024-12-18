@@ -1,16 +1,6 @@
-<!-- <div>
-    <h1>Insectes de l'ordre {{ ordreID }}</h1>
-    <div *ngIf="insectes.length > 0; else noData">
-      <ul>
-        <li *ngFor="let insecte of insectes">
-          <h2>{{ insecte.nomCommun }}</h2>
-          <p>Nom scientifique : {{ insecte.nomScientifique }}</p>
-          <img [src]="insecte.image" alt="{{ insecte.nomCommun }}" />
-        </li>
-      </ul>
-    </div>
-    <ng-template #noData>
-      <p>Aucun insecte trouvé pour cet ordre.</p>
-    </ng-template>
-  </div>
-   -->
+does it even work bruv
+
+@for (insecte of insectes ; track insecte.id){
+  <app-insecte [insecte]="insecte"></app-insecte>
+  <p>guh</p>
+}

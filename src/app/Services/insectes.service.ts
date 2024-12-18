@@ -44,6 +44,12 @@ export class InsectesService {
     );
   }
 
+  getInsectesByOrderByAPI(id:number): Observable<Insecte[]> {
+    return this.httpClient.get<{ data: Insecte[] }>(`${environment.api_url}triordres?ordre_id=`+id).pipe(
+      map(response => response.data) // Extrait le tableau d'insectes de la réponse
+    );
+  }
+
   // Méthode pour récupérer les insectes depuis les données statiques
   getInsectesList(): Insecte[] {
     return this.insectes;

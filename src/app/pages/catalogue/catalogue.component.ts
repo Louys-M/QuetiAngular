@@ -1,16 +1,37 @@
 import { Component } from '@angular/core';
+import { InsecteComponent } from '../../Queti/insecte/insecte.component';
+import { Insecte } from '../../models/insecte';
+import { InsectesService } from '../../Services/insectes.service';
 import { RouterLinkActive } from '@angular/router';
 import { Route, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-catalogue',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive,InsecteComponent],
   templateUrl: './catalogue.component.html',
   styleUrl: './catalogue.component.css'
 })
 export class CatalogueComponent {
+  
+  insectes!: Insecte[]
 
+  constructor(private insectesServices : InsectesService, private route: ActivatedRoute){}
+  ngOnInit(): void{
+    this.route.params.subscribe(params => {
+      const ordreID = +params['ordreID']; // Convertir en nombre
+
+      // Appeler la méthode pour récupérer les insectes
+      if (ordreID) {
+        this.insectesServices.getInsectesByOrderByAPI(ordreID).subscribe({
+          next: (data) => this.insectes = data,
+          error: (err) => console.error('Erreur lors de la récupération des insectes', err),
+          complete: () => console.log('Récupération des insectes terminée')
+        });
+      }
+    });
+  }
 }
 
 
