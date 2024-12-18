@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ResultatComponent } from './pages/resultat/resultat.component';
 import { InsecteComponent } from './Queti/insecte/insecte.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { FavorisComponent } from './pages/favoris/favoris.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'register', component:RegisterComponent},
     {path: 'resultat', component:ResultatComponent},
+    {path: 'favoris', component:FavorisComponent},
     {path: 'ordre', component:MenuCatalogueComponent},
     {path: 'ordre/:ordreID', component:CatalogueComponent},
     {path: 'insecte/:insecteID', component:InsecteComponent},

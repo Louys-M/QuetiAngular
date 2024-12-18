@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable,of, map } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Insecte } from '../models/insecte';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
   constructor(private router: Router, private http: HttpClient) { }
+
   url : string = "" ;
   token: string | null = null;
   is_connected = false;
@@ -95,5 +98,18 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('authToken');
+  }
+
+  getUserLikedInsect(): Observable<Insecte[]>{
+    const token = localStorage.getItem('authToken');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  
+    return this.http.get<{ data: Insecte[] }>(`${environment.api_url}likedInsects`, { headers }).pipe(
+      map(response => response.data)
+    );
+  }
+
+  userLikeInsect(id:number){
+    // http://quetiback.sc2zeep6040.universe.wf/like?insect_id=2
   }
 }

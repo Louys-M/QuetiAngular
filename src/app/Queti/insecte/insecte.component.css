@@ -1,4 +1,9 @@
-img{
+.insectPic{
+    width: 150px;
+    height: auto;
+}
+
+.userFav{
     width: 50px;
     height: auto;
 }

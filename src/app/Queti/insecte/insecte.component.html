@@ -1,5 +1,8 @@
 <h2>{{insecte.nom_fr}}</h2>
-<img src="{{insecte.photo}}" alt="guh">
+<img class="insectPic" src="{{insecte.photo}}" alt="guh">
+@if (authService.isAuthenticated()) {
+    <img class="userFav" src="assets/bouton_coeur.png" alt="favoris">
+}
 <p>{{insecte.description}}</p>
 <p>{{insecte.nom_sc}}</p>
 

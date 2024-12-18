@@ -1,6 +1,7 @@
-does it even work bruv
+<a routerLink="/ordre">Revenir en arrière</a>
 
-@for (insecte of insectes ; track insecte.id){
-  <app-insecte [insecte]="insecte"></app-insecte>
-  <p>guh</p>
-}
+<div id="insecteContainer">
+  @for (insecte of insectes ; track insecte.id){
+    <app-insecte [insecte]="insecte"></app-insecte>
+  }
+</div>

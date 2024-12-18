@@ -21,7 +21,7 @@ export class LoginComponent {
   try {
   await this.authService.login(form.value.email, form.value.password);
   console.log('connecté');
-  this.router.navigate(['/home']); // Rediriger vers le tableau de bord après la connexion réussie
+  this.router.navigate(['']); // Rediriger vers le tableau de bord après la connexion réussie
   } catch (error:any) {
   console.log("Message : "+error);
   }
