@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { EmailValidator } from '@angular/forms';
 import { AuthService } from '../../Services/auth.service';
-import { Router } from '@angular/router';
+import { Router,RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink,RouterOutlet, RouterLinkActive],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
