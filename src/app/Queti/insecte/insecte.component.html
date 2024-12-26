@@ -1,7 +1,15 @@
 <h2>{{insecte.nom_fr}}</h2>
 <img class="insectPic" src="{{insecte.photo}}" alt="guh">
+
 @if (authService.isAuthenticated()) {
-    <img class="userFav" src="assets/bouton_coeur.png" alt="favoris">
+    
+    <button (click)="toggleLike(insecte.id)">
+        <img
+          class="userFav"
+          [src]="likedInsects.has(insecte.id) ? 'assets/0428.jpg' : 'assets/bouton_coeur.png'"
+          [alt]="likedInsects.has(insecte.id) ? 'Unfavorite' : 'Favorite'"
+        />
+      </button>
 }
 <p>{{insecte.description}}</p>
 <p>{{insecte.nom_sc}}</p>

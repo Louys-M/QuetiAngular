@@ -1,6 +1,11 @@
 <p>favoris works!</p>
 
 @if (authService.isAuthenticated()) {
-
-    <p>wsh mg</p>
+    <div id="insecteContainer">
+        grr
+        @for (insecte of insectesFav ; track insecte.id){
+            grr
+          <app-insecte [insecte]="insecte"></app-insecte>
+        }
+      </div>
 }

@@ -18,6 +18,7 @@ export class AuthService {
   error: string = '';
   //utilisation d’un BehaviorSubject pour créer une reaction lors du changement de valeur sur d’autres components
   private loggedIn = new BehaviorSubject<boolean>(this.isAuthenticated());
+  private likedInsects$ = new BehaviorSubject<Set<number>>(new Set());
 
   async register(name: string, email: string, password: string) {
     this.url = environment.api_url + 'register';
@@ -100,16 +101,77 @@ export class AuthService {
     return !!localStorage.getItem('authToken');
   }
 
-  getUserLikedInsect(): Observable<Insecte[]>{
+  fetchLikedInsects(): void {
     const token = localStorage.getItem('authToken');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  
-    return this.http.get<{ data: Insecte[] }>(`${environment.api_url}likedInsects`, { headers }).pipe(
-      map(response => response.data)
+    this.http
+      .get<{ data: { id: number }[] }>(`${environment.api_url}likedInsects`, { headers })
+      .pipe(map(response => new Set(response.data.map(insect => insect.id))))
+      .subscribe({
+        next: (likedInsects) => {
+          this.likedInsects$.next(likedInsects);
+        },
+        error: (err) => {
+          console.error('Failed to load liked insects:', err);
+        },
+      });
+  }
+
+  getAllInsects(): Observable<Insecte[]> {
+    return this.http.get<{ data: Insecte[] }>(`${environment.api_url}insects`).pipe(
+      map((response) => response.data) // Extract the data array
     );
   }
 
-  userLikeInsect(id:number){
-    // http://quetiback.sc2zeep6040.universe.wf/like?insect_id=2
+  getUserLikedInsect(): Observable<Set<number>>{
+    return this.likedInsects$.asObservable();
   }
+
+  // userLikeInsect(insectId:number): void{
+  //   const token = localStorage.getItem('authToken');
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  //   this.http.post(`${environment.api_url}like`, { insect_id: insectId }, { headers }).subscribe({
+  //     next: () => {
+  //       const likedInsects = this.likedInsects$.value;
+  //       likedInsects.add(insectId);
+  //       this.likedInsects$.next(likedInsects);
+  //     },
+  //     error: (err) => {
+  //       console.error(`Failed to like insect ${insectId}:`, err);
+  //     },
+  //   });
+
+    
+  // }
+
+  userLikeInsect(insectId:number){
+    const token = localStorage.getItem('authToken');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    this.url = environment.api_url + 'like'
+    return this.http.post(this.url, { insect_id: insectId }, { headers });
+  }
+
+  userUnlikeInsect(insectId:number){
+    const token = localStorage.getItem('authToken');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    this.url = environment.api_url + 'unlike'
+    return this.http.post(this.url, { insect_id: insectId }, { headers });
+  }
+
+
+
+  // userUnlikeInsect(insectId: number): void {
+  //   const token = localStorage.getItem('authToken');
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  //   this.http.post(`${environment.api_url}unlike`, { insect_id: insectId }, { headers }).subscribe({
+  //     next: () => {
+  //       const likedInsects = this.likedInsects$.value;
+  //       likedInsects.delete(insectId);
+  //       this.likedInsects$.next(likedInsects);
+  //     },
+  //     error: (err) => {
+  //       console.error(`Failed to unlike insect ${insectId}:`, err);
+  //     },
+  //   });
+  // }
 }

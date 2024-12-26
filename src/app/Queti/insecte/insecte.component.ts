@@ -13,23 +13,46 @@ import { AuthService } from '../../Services/auth.service';
 })
 export class InsecteComponent {
 
-  user: any; // Store user data here
+  likedInsects: Set<number> = new Set(); // Store liked insect IDs
 
   constructor(protected authService: AuthService) { }
+  
+  @Input() insecte!: Insecte;
+  @Input() insectId!: number;
+  isLiked = false;
 
   ngOnInit() {
-    this.authService.getInfo().subscribe({
-      next: (data) => {
-        this.user = data; // Save user data
-        console.log('User info:', this.user);
-      },
-      error: (err) => {
-        console.error('Error fetching user info:', err);
-      }
+    this.authService.getUserLikedInsect().subscribe((likedInsects) => {
+      this.likedInsects = likedInsects;
+      this.isLiked = likedInsects.has(this.insectId);
     });
-}
+  }
 
-  @Input() insecte!: Insecte;
+  toggleLike(insectId: number): void {
+    if (this.likedInsects.has(insectId)) {
+      // Unlike the insect
+      this.authService.userUnlikeInsect(insectId).subscribe({
+        next: () => {
+          this.likedInsects.delete(insectId); // Update local state
+          console.log(`Insect ${insectId} unliked successfully.`);
+        },
+        error: (err) => {
+          console.error(`Failed to unlike insect ${insectId}:`, err);
+        },
+      });
+    } else {
+      // Like the insect
+      this.authService.userLikeInsect(insectId).subscribe({
+        next: () => {
+          this.likedInsects.add(insectId); // Update local state
+          console.log(`Insect ${insectId} liked successfully.`);
+        },
+        error: (err) => {
+          console.error(`Failed to like insect ${insectId}:`, err);
+        },
+      });
+    }
+  }
 
   id! : number;
   nom_sc! : string;
