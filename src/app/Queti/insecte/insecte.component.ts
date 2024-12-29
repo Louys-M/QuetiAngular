@@ -54,10 +54,6 @@ export class InsecteComponent {
     }
   }
 
-  id! : number;
-  nom_sc! : string;
-  nom_fr!: string;
-  photo!: string;
-  description!: string;
+
 
 }

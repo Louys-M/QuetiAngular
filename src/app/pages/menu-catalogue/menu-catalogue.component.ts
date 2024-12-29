@@ -16,9 +16,7 @@ export class MenuCatalogueComponent {
 
   ordres!: Ordre[]
 
-  constructor(private ordresServices : OrdresService){
-    // this.insectes = this.insectesServices.getInsectesList();
-  }
+  constructor(private ordresServices : OrdresService){}
 
   ngOnInit(): void{
     this.ordresServices.getOrdresByAPI().subscribe({
