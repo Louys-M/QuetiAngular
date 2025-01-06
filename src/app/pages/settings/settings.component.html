@@ -1,5 +1,3 @@
-<p>settings works!</p>
-
 @if (authService.isAuthenticated()) {
 
     <h1>User Profile</h1>
@@ -8,5 +6,5 @@
 
     <button (click)="logout()">Déconnexion</button>
     } @else {
-    <button (click)="router.navigate(['/login'])">Connexion</button>
+    <button class="Connexion" (click)="router.navigate(['/login'])">Connexion</button>
     }

@@ -1,0 +1,17 @@
+.ordreliste {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: #D5DD76;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+    width: 200px;
+    display: inline-block; 
+    margin: 0 auto;
+}
+
+div{
+    text-align: center;
+    margin: 4vh;
+}

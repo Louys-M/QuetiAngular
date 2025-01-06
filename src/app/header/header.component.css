@@ -1,5 +1,8 @@
 header{
     background-color: #DFDFBD;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 
