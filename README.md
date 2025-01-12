@@ -17,8 +17,11 @@ Queti est une application web éducative qui vise à sensibiliser le grand publi
 - Aux utilisateurs connectés de sauvegarder une liste personnalisée de leurs insectes favoris.
 
 L'installation de Angular a été réalisée par Louys Martin principalement.
+
 Le CSS et l'architecture des pages ont été faits par Louys Martin.
+
 Les fonctions de connexion ont été développées par Yolia Charpentier.
+
 L'affichage des ordres pour le catalogue a été réalisé par Louys Martin et a été la base pour la suite du développement des autres fonctions codées par Yolia Charpentier. Cela inclut l'affichage des insectes par ordre, la mise en place des requêtes de l'utilisateur et celles en rapport avec le questionnaire.
 
 ## **Fonctionnalités**
