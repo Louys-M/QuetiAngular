@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-etape2',
+  selector: 'app-etape19',
   standalone: true,
   imports: [],
-  templateUrl: './etape2.component.html',
-  styleUrl: './etape2.component.css'
+  templateUrl: './etape19.component.html',
+  styleUrl: './etape19.component.css'
 })
-export class Etape2Component {
+export class Etape19Component {
 
   constructor(public router: Router) { }
 
