@@ -6,7 +6,7 @@
     <button (click)="toggleLike(insecte.id)">
         <img
           class="userFav"
-          [src]="likedInsects.has(insecte.id) ? 'assets/0428.jpg' : 'assets/bouton_coeur.png'"
+          [src]="likedInsects.has(insecte.id) ? 'assets/bouton_coeur.png' : 'assets/bouton_coeur_vide.png'"
           [alt]="likedInsects.has(insecte.id) ? 'Unfavorite' : 'Favorite'"
         />
       </button>
