@@ -1,27 +1,53 @@
-# QuetiAngular
+# SAE 501 - API Rest Laravel et Figma
+# Queti : Une Application Web pour l'Identification des Insectes des Vosges
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## **Table des Matières**
+1. [Description](#description)
+2. [Fonctionnalités](#fonctionnalités)
+3. [Technologies Utilisées](#technologies-utilisées)
+4. [Lien](#lien)
+5. [Utilisation](#utilisation)
+6. [Structure du Projet](#structure-du-projet)
+7. [Crédits et Sources](#crédits-et-sources)
 
-## Development server
+## **Description**
+Queti est une application web éducative qui vise à sensibiliser le grand public à la biodiversité des forêts vosgiennes. Elle permet :
+- D'identifier rapidement les insectes grâce à un questionnaire inspiré d'une clé d'identification.
+- De parcourir un catalogue interactif pour découvrir les insectes de la région.
+- Aux utilisateurs connectés de sauvegarder une liste personnalisée de leurs insectes favoris.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+L'installation de Angular a été réalisée par Louys Martin principalement.
 
-## Code scaffolding
+Le CSS et l'architecture des pages ont été faits par Louys Martin.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Les fonctions de connexion ont été développées par Yolia Charpentier.
 
-## Build
+L'affichage des ordres pour le catalogue a été réalisé par Louys Martin et a été la base pour la suite du développement des autres fonctions codées par Yolia Charpentier. Cela inclut l'affichage des insectes par ordre, la mise en place des requêtes de l'utilisateur et celles en rapport avec le questionnaire.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## **Fonctionnalités**
+- Questionnaire interactif pour déterminer l'ordre des insectes.
+- Exploration d’un catalogue des insectes par ordre.
+- Connexion utilisateur pour gérer une liste d’insectes favoris.
 
-## Running unit tests
+## **Technologies Utilisées**
+- **Framework principal** : Angular
+- **Langage** : TypeScript
+- **Backend/API** : Laravel
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## **Lien**
+Ouvrez votre navigateur à l’adresse : `http://quetifront.queti.sc2zeep6040.universe.wf/`.
 
-## Running end-to-end tests
+## **Utilisation**
+1. Accédez à l'application.
+2. Choisissez entre utiliser le questionnaire pour identifier un insecte ou explorer le catalogue.
+3. Connectez-vous pour sauvegarder vos insectes favoris.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## **Structure du Projet**
+- `src/app` : Contient les composants Angular.
+- `src/assets` : Contient les images et autres ressources statiques.
+- `src/environments` : Configuration des environnements de développement et de production.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## **Crédits et Sources**
+- Le questionnaire est basé sur le PDF fourni par Pro Natura : [Lien vers le PDF](https://www.pronatura.ch/sites/pronatura.ch/files/CdD_Insectes.pdf).
+- Les images d'insectes sont en majorité tirées du site Insecta : [Lien vers le site de Insecta](https://insecta.pro/)
+- Les autres images d'insectes sont tirées de l'INPN : [Lien vers le site de l'INPN](https://inpn.mnhn.fr/)
