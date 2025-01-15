@@ -1,5 +1,8 @@
-<h1>Question 8 : </h1>
-<h2>Est ce que les ailes antérieures sont nettement plus grandes que les ailes postérieures ?</h2>
-
-<button (click)="router.navigate(['/etape9'])">Oui, les ailes antérieures sont nettement plus grandes que les ailes postérieures.</button>
-<button (click)="router.navigate(['/etape11'], { queryParams: { resultId: 2 } })">Non, les ailes antérieures et postérieures ont peu ou pas de différence de taille.</button>
+<div class="question">
+    <img src="assets/queti_question.png" alt="logo">
+    <h1>Est ce que les ailes antérieures sont nettement plus grandes que les ailes postérieures ?</h1>
+    <div class="buttons">
+        <button (click)="router.navigate(['/etape9'])">Oui, les ailes antérieures sont nettement plus grandes que les ailes postérieures.</button>
+        <button (click)="router.navigate(['/etape11'], { queryParams: { resultId: 2 } })">Non, les ailes antérieures et postérieures ont peu ou pas de différence de taille.</button>
+    </div>
+</div>

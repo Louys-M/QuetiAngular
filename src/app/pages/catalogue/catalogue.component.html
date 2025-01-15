@@ -1,7 +1,10 @@
-<a routerLink="/ordre">Revenir en arrière</a>
+<a routerLink="/ordre" class="back-button">Revenir en arrière</a>
+
 
 <div id="insecteContainer">
-  @for (insecte of insectes ; track insecte.id){
-    <app-insecte [insecte]="insecte"></app-insecte>
+  @for (insecte of insectes; track insecte.id) {
+    <div class="insect-card">
+      <app-insecte [insecte]="insecte"></app-insecte>
+    </div>
   }
 </div>

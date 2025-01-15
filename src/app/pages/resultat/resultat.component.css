@@ -1,0 +1,48 @@
+/* Conteneur principal de la page */
+.resultat-page {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Titre principal */
+.resultat-page h1 {
+    margin-top: 5vh;
+    font-size: 30px;
+    color: #B6AD74;
+    margin-bottom: 20px;
+}
+
+/* Image de la mascotte */
+.mascotte-image {
+    width: 60%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Conteneur des résultats */
+.resultat {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.buttons button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #D5DD76;
+    color: #1C1C1A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #9e9763;
+}

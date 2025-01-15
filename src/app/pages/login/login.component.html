@@ -1,32 +1,33 @@
-<p>Ceci est le login</p>
-<br>
 <div class="container-form">
+    <img src="assets/queti_happy.png" alt="logo" class="form-logo">
+
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name=email ngModel appEmailValidator required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            @if (!loginForm.controls['email'].valid){
+            <label for="exampleInputEmail1" class="form-label">Adresse mail </label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" ngModel appEmailValidator required>
+            @if (!loginForm.controls['email'].valid) {
                 <div class="text-danger">
                     Email n'a pas le bon format
                 </div>
             }
         </div>
+
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <label for="exampleInputPassword1" class="form-label">Mot de passe </label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel PasswordValidatorDirective required>
-            @if (!loginForm.controls['password'].valid){
+            @if (!loginForm.controls['password'].valid) {
                 <div class="text-danger">
                     MDP n'a pas le bon format
                 </div>
             }
         </div>
+
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" ngModel required name="check">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label class="form-check-label" for="exampleCheck1">Vérification</label>
         </div>
-        <button type="submit" class="btn btn-primary"
-        [disabled]="!loginForm.valid">Submit</button>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Connexion</button>
     </form>
 
     <div id="registerLink" class="form-text">

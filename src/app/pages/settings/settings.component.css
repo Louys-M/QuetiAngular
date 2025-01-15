@@ -1,3 +1,68 @@
-.connexion{
-    margin: 0 auto;
+/* Conteneur principal pour le profil utilisateur */
+.user-profile {
+    max-width: 400px;
+    margin: 20px auto; /* Centre horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond clair */
+    border: 1px solid #ddd; /* Bordure subtile */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    text-align: center; /* Centrer le contenu */
+}
+
+/* Titre du profil */
+.user-profile h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1C1C1A;
+    margin-bottom: 20px;
+}
+
+/* Texte des informations utilisateur */
+.user-profile p {
+    font-size: 16px;
+    color: #555; /* Couleur grise */
+    margin: 10px 0;
+}
+
+/* Bouton de déconnexion */
+.logout-btn {
+    background-color: #D5DD76; /* Couleur verte */
+    color: #1C1C1A; /* Texte noir */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Effet fluide */
+}
+
+.logout-btn:hover {
+    background-color: #9E9763; /* Couleur plus foncée au survol */
+    transform: scale(1.05); /* Légère augmentation de taille */
+}
+
+/* Conteneur pour le bouton de connexion */
+.user-login {
+    text-align: center; /* Centrer le bouton */
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+/* Bouton de connexion */
+.Connexion {
+    background-color: transparent; /* Pas de fond */
+    color: #1C1C1A; /* Texte noir */
+    text-decoration: underline; /* Souligné */
+    border: none; /* Pas de bordure */
+    font-size: 16px;
+    cursor: pointer; /* Indique que c'est cliquable */
+    transition: color 0.3s ease; /* Transition fluide */
+}
+
+.Connexion:hover {
+    color: #9E9763; /* Couleur verte au survol */
 }

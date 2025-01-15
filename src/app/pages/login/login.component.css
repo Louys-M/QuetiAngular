@@ -1,0 +1,83 @@
+/* Conteneur principal */
+.container-form {
+    max-width: 400px; /* Largeur maximale pour un affichage centré */
+    margin: 20px auto; /* Centrer le conteneur horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond clair */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    text-align: center; /* Centrer le contenu */
+}
+
+/* Logo au-dessus du formulaire */
+.form-logo {
+    width: 190px; /* Taille fixe du logo */
+    height: auto;
+    margin-bottom: 20px; /* Espacement avec le formulaire */
+}
+
+/* Titre */
+p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1C1C1A;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.form-control {
+    border: 1px solid #ddd; /* Bordure subtile */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Erreurs */
+.text-danger {
+    font-size: 14px;
+    color: #d9534f; /* Rouge pour les erreurs */
+    margin-top: 5px;
+}
+
+/* Aide au format */
+.form-text {
+    font-size: 14px;
+    color: #6c757d; /* Gris subtil */
+    margin-top: 5px;
+}
+
+/* Bouton de soumission */
+.btn-primary {
+    background-color: #D5DD76; /* Couleur verte */
+    color: #1C1C1A; /* Texte noir */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px; /* Espacement au-dessus */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition pour l'effet */
+}
+
+.btn-primary:disabled {
+    background-color: #D5DD76; /* Couleur grisée pour les boutons désactivés */
+    cursor: not-allowed;
+}
+
+.btn-primary:hover {
+    background-color: #9E9763; /* Couleur plus foncée au survol */
+    transform: scale(1.05); /* Légère augmentation de taille */
+}
+
+/* Lien vers l'inscription */
+#registerLink a {
+    color: #6c757d; /* Gris subtil */
+    text-decoration: underline; /* Souligné */
+    font-size: 14px;
+}
+
+#registerLink a:hover {
+    color: #1C1C1A; /* Couleur plus sombre au survol */
+}

@@ -1,5 +1,11 @@
-<h1>Question 15 : </h1>
-<h2>A quoi ressemble l'insecte ?</h2>
+<div class="question">
+    <img src="assets/queti_question.png" alt="logo">
+    <h1>A quoi ressemble l'insecte ?</h1>
+    <div class="buttons">
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 16 } })">L'insecte a un corps allongé recouvert d'écailles argentées.</button>
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 10 } })">L'insecte a une forme caractéristique de poire et mesure rarement plus de 3 mm.</button>               
+    </div>
+</div>
 
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 16 } })">L'insecte a un corps allongé recouvert d'écailles argentées.</button>
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 10 } })">L'insecte a une forme caractéristique de poire et mesure rarement plus de 3 mm.</button>
+
+

@@ -1,0 +1,45 @@
+/* Conteneur principal */
+#insecteContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne automatiquement */
+    gap: 20px; /* Espacement entre les insectes */
+    justify-content: center; /* Centre les lignes */
+    padding: 20px;
+}
+
+/* Carte individuelle */
+.insect-card {
+    flex: 1 1 calc(50% - 20px); /* Chaque insecte occupe 50% de l'espace disponible moins l'espacement */
+    max-width: calc(50% - 20px); /* Limite la largeur des cartes */
+    box-sizing: border-box;
+}
+
+/* Bouton de retour */
+.back-button {
+    color: black; /* Couleur noire pour le texte */
+    text-decoration: underline; /* Souligné */
+    font-size: 16px; /* Taille de police standard */
+    font-weight: normal; /* Pas de gras */
+    border: none; /* Pas de bordure */
+    background: none; /* Pas de fond */
+    cursor: pointer; /* Indique que c'est cliquable */
+    margin-left: 10px; 
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1C1C1A; /* Noir */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espacement au-dessus */
+    margin-bottom: 20px; /* Espacement en dessous */
+}
+/* Message pour les utilisateurs non connectés */
+.not-connected-message {
+    font-size: 18px;
+    color: #d9534f; /* Rouge pour attirer l'attention */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espacement au-dessus */
+    font-weight: bold;
+}
+

@@ -1,5 +1,8 @@
-<h1>Question 19 : </h1>
-<h2>Quelle est la forme du corps de l'insecte ?</h2>
-
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 11 } })">Le corps est ovale et aplati.</button>
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 6 } })">Le corps est allongé.</button>
+<div class="question">
+    <img src="assets/queti_question.png" alt="logo">
+    <h1>Quelle est la forme du corps de l'insecte ?</h1>
+    <div class="buttons">
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 11 } })">Le corps est ovale et aplati.</button>
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 6 } })">Le corps est allongé.</button>            
+    </div>
+</div>

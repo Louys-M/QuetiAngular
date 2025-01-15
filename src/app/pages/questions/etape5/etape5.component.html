@@ -1,5 +1,9 @@
-<h1>Question 5 : </h1>
-<h2>Est ce que l'insectes possède des long filaments (cerques) à l'extrémité de son abdomen ?</h2>
+<div class="question">
+    <img src="assets/queti_question.png" alt="logo">
+    <h1>Est ce que l'insectes possède des long filaments (cerques) à l'extrémité de son abdomen </h1>
+    <div class="buttons">
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 5 } })">Oui, l'insecte possède 2 ou 3 cerques à l'extrémité de l'abdomen.</button>
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 4 } })">Non, l'insecte ne possède pas de cerques à l'extrémité de l'abdomen.</button>
+    </div>
+</div>
 
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 5 } })">Oui, l'insecte possède 2 ou 3 cerques à l'extrémité de l'abdomen.</button>
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 4 } })">Non, l'insecte ne possède pas de cerques à l'extrémité de l'abdomen.</button>

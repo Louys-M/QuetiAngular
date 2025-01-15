@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Micro+5&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,6 +34,7 @@ body {
 	line-height: 1;
     background-color: #F1F2E5;
     color: #1C1C1A;
+	font-family: 'Roboto';
 }
 
 ol, ul {

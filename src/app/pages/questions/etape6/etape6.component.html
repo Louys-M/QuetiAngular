@@ -1,6 +1,9 @@
-<h1>Question 6 : </h1>
-<h2>Quelle est l'apparence de ses ailes ?</h2>
-
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 20 } })">Les ailes sont opaques et recouvertes de très petites écailles.</button>
-<button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 13 } })">Les ailes sont opaques et recouvertes de poils.</button>
-<button (click)="router.navigate(['/etape7'])">Les ailes sont transparentes et non-recouvertes d'écailles ou de poils.</button>
+<div class="question">
+    <img src="assets/queti_question.png" alt="logo">
+    <h1>Quelle est l'apparence de ses ailes ?</h1>
+    <div class="buttons">
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 20 } })">Les ailes sont opaques et recouvertes de très petites écailles.</button>
+        <button (click)="router.navigate(['/resultat'], { queryParams: { resultId: 13 } })">Les ailes sont opaques et recouvertes de poils.</button>
+        <button (click)="router.navigate(['/etape7'])">Les ailes sont transparentes et non-recouvertes d'écailles ou de poils.</button>
+    </div>
+</div>

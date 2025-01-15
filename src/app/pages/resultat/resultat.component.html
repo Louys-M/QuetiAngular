@@ -1,3 +1,23 @@
-@for (famille of filteredFamilles; track famille.id){
-    <app-famille [famille]="famille"></app-famille>
-}
+<!-- @for (famille of filteredFamilles; track famille.id){
+    <app-famille [famille]="famille"></app-famille> -->
+    
+    <div class="resultat-page">
+        <!-- Titre principal -->
+        <h1>
+            {{ resultId === 22 ? 'Il ne s\'agit sûrement pas d\'un insecte. Je ne pourrai pas t\'aider.' : 'Votre insecte est peut-être :' }}
+        </h1>
+        
+    
+        <!-- Conteneur des résultats -->
+        <div class="resultat">
+            @for (famille of filteredFamilles; track famille.id) {
+                <app-famille [famille]="famille"></app-famille>
+            }
+        </div>
+        <img 
+        [src]="resultId === 22 ? 'assets/queti_neutral.png' : 'assets/queti_star.png'" 
+        alt="mascotte" 
+        class="mascotte-image">
+    </div>
+    
+    

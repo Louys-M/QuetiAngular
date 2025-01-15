@@ -1,17 +1,18 @@
-<h2>{{insecte.nom_fr}}</h2>
-<img class="insectPic" src="{{insecte.photo}}" alt="guh">
-
-@if (authService.isAuthenticated()) {
-    
-    <button (click)="toggleLike(insecte.id)">
-        <img
-          class="userFav"
-          [src]="likedInsects.has(insecte.id) ? 'assets/bouton_coeur.png' : 'assets/bouton_coeur_vide.png'"
-          [alt]="likedInsects.has(insecte.id) ? 'Unfavorite' : 'Favorite'"
-        />
+<div class="insect-image-container">
+  <!-- Bouton Favori en haut à droite -->
+  @if (authService.isAuthenticated()) {
+      <button (click)="toggleLike(insecte.id)" class="fav-button">
+          <img
+            class="userFav"
+            [src]="likedInsects.has(insecte.id) ? 'assets/bouton_coeur.png' : 'assets/bouton_coeur_vide.png'"
+            [alt]="likedInsects.has(insecte.id) ? 'Unfavorite' : 'Favorite'"
+          />
       </button>
-}
-<p>{{insecte.description}}</p>
-<p>{{insecte.nom_sc}}</p>
+  }
 
-<br>
+  <!-- Image de l'insecte -->
+  <img class="insectPic" src="{{insecte.photo}}" alt="{{insecte.nom_fr}}">
+
+  <!-- Nom de l'insecte -->
+  <div class="insect-name-overlay">{{insecte.nom_fr}}</div>
+</div>

@@ -1,11 +1,17 @@
-<p>favoris works!</p>
+
+
+<p>Mes favoris</p>
 
 @if (authService.isAuthenticated()) {
     <div id="insecteContainer">
-        grr
-        @for (insecte of insectesFav ; track insecte.id){
-            grr
-          <app-insecte [insecte]="insecte"></app-insecte>
+        @for (insecte of insectesFav; track insecte.id) {
+            <div class="insect-card">
+                <app-insecte [insecte]="insecte"></app-insecte>
+            </div>
         }
-      </div>
+    </div>
+} @else {
+    <p class="not-connected-message">
+        Vous devez être connecté pour avoir des insectes en favoris.
+    </p>
 }
